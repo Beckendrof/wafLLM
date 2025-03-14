@@ -33,7 +33,7 @@ class WAFRequestHandler(BaseHTTPRequestHandler):
         <head><title>403 Forbidden</title></head>
         <body>
         <h1>Forbidden</h1>
-        <p>The request was blocked by the WAF: {message}</p>
+        <p>The request was blocked by the WAF Police!</p>
         </body>
         </html>
         """
