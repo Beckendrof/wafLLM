@@ -28,7 +28,6 @@ class LLMDetector:
         
         # Get LLM response
         response = self._query_llm(prompt)
-        print(response)
         
         # Parse response
         is_anomalous, explanation = self._parse_llm_response(response)
@@ -42,15 +41,13 @@ class LLMDetector:
     def _create_detection_prompt(self, request_data):
         """Create a simple detection prompt from request data."""
         request = self._parse_request(str(request_data.get('body', '')))
-        print(request)
         
         return f"""You are a WAF simulator analyzing a request.
 REQUEST BODY: {request}
 
 MALICIOUS: [YES/NO]
 REASON: [5 words]
-"""
-    
+""" 
     def _query_llm(self, prompt):
         """Send request to LLM API with proper error handling."""
         try:
