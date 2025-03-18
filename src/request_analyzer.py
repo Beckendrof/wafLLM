@@ -57,7 +57,7 @@ class RequestAnalyzer:
         """
         # Log request for analysis
         self.logger.info(f"Analyzing request to {request_data.get('path', 'unknown path')}")
-        
+
         # Use LLM to detect anomalies
         is_anomalous, explanation = self.llm_detector.analyze_request(request_data)
         
